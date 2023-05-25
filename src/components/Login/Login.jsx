@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../providers/ContextProviders';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css'
 const Login = () => {
+    const [show, setShow] = useState(false)
     const {loginUser} = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
@@ -32,7 +33,12 @@ const Login = () => {
                 </div>
                 <div className='form_input-sec'>
                     <label className='form_label' htmlFor="password">Password</label>
-                    <input className='form_input'  type="password" id="password" name="password" placeholder='Password'/>
+                    <input className='form_input'  type={show? "text":"password"} id="password" name="password" placeholder='Password'/>
+                    <p onClick={()=>setShow(!show)} style={{cursor:"pointer", display:"inline"}}>
+                        <smell>
+                            {show?<span>Hide password</span>:<span>Show password</span>}
+                        </smell>
+                    </p>
                 </div>
                 <p className='form_Link'>New in this website? please <Link className='form_link-button' to="/register">Register</Link></p>
                 <button type='submit' className="login-register-btn">Login</button>
