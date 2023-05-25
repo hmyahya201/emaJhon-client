@@ -1,0 +1,75 @@
+.login-register_form{
+    width: 40%;
+    padding: 40px;
+    margin: 50px auto;
+    background: #FFFFFF;
+    border: 1px solid #95A0A7;
+    border-radius: 8px;
+}
+.form_title{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 42px;
+    letter-spacing: 0.0025em;
+    color: #2A414F;
+    text-align: center;
+}
+.form_label{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 0.0015em;
+    color: #2A414F;
+}
+.form_input{
+    border: 1px solid #95A0A7;
+    border-radius: 5px;
+    width: 95%;
+    padding: 15px;
+    display: block;
+    margin-top: 10px;
+}
+.form_input::placeholder{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 0.0015em;
+    color: #95A0A7;
+}
+.form_input-sec{
+    margin: 16px 0;
+}
+.form_Link{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 18px;
+    letter-spacing: 0.0025em;
+    color: #2A414F;
+    line-height: 28px;
+}
+.form_link-button{  
+  color:#FF9900;
+  font-size: 25px;
+  text-decoration: none;
+}
+.login-register-btn{
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    background: #FF9900;
+    font-size: 20px;
+    margin-top: 25px;
+    transition: 0.3s;
+}
+.login-register-btn:hover{
+    background: rgba(255, 153, 0, 0.3);
+    color:#2A414F;
+}

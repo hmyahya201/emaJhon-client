@@ -13,6 +13,9 @@ import Inventory from './components/Inventory/Inventory';
 import Login from './components/Login/Login';
 import cartProductsLoader from './loaders/cartProductsLoader';
 import Checkout from './components/Checkout/Checkout';
+import ContextProviders from './providers/ContextProviders';
+import Register from './components/Register/Register';
+import PrivateRoute from './components/Routes/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -25,27 +28,33 @@ const router = createBrowserRouter([
       },
       {
         path: 'orders',
-        element: <Orders></Orders>,
+        element: <PrivateRoute><Orders></Orders></PrivateRoute>,
         loader: cartProductsLoader
       },
       {
         path: 'inventory',
-        element: <Inventory></Inventory>
+        element: <PrivateRoute><Inventory></Inventory></PrivateRoute>
       },
       {
         path:'checkout',
-        element: <Checkout></Checkout>
+        element: <PrivateRoute><Checkout></Checkout></PrivateRoute>
       },
       {
         path: 'login',
         element: <Login></Login>
-      }
+      },
+      {
+        path: 'register',
+        element: <Register></Register>
+      },
     ]
   }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ContextProviders>
+      <RouterProvider router={router} />
+    </ContextProviders>
   </React.StrictMode>,
 )
